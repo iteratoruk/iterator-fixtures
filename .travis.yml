@@ -8,3 +8,8 @@ branches:
   only:
   - master
   - "/^iterator-fixtures-[0-9]+\\.[0-9]+\\.[0-9]+/"
+after_success:
+  - mvn clean test jacoco:report coveralls:report
+env:
+  global:
+    secure: WojAofzPO32jARvbcX3XJoEJj0kGiITz582DwoXqqV7s4tGP5NyZ7wDJDnnXJMnYys+7KlyIyO+ThImuEu15euZzbRxSz3Epxy7pCREs0qXnL6eouPIqu+dREqc7VwZYv0u1F5gQTpUF8Z+hIag7ZbWZIGA/MqNKgs6QVLQTWgt92mbaQ78Rt/MqsTtjrtJuVIYYlqkFqoqJK/GtrVamqqGOFmHHrO0OBe4wgWpR5vKGAHDCmycjrvAMr49wUEwKAI9QbHrZbw3c0YZ426zoAyCN0NkIrHEjjqxdKFkqj3FTqi3LRkcJTWomXR6JlLyVwmS0DFJ8nK+c8zEL6Lxvhj2UBlBA3r9Qh5pe/TaMe1r55hTc8ylqgsr5YnIxdW9YUyBtzwOvNQA4sSHueiO9MMjjQdLDNslT9am0eMZWJQSmF+d1ECr8Kc0xBzvluqoXLjbTGdOMNDTacaME9huUO4v1X0s9fF54BXw3aOcEnOVnkbU1TZSXPs6s+NnB1qkCKeKLIwTofFAgI1ey9hSGLgHa243Yy3kYhTM+Xjd+UIQM2hILsoy+NdvMphxSrHgZcw0IwUKhW4TVZ5RVzyKgbov+J0ksgZXYzqNKT5ybpGcRbWned9KL6kp33LhBJAGT7V7i0HQ/SRi2jaja03Hx2jJZ1VNi4bQGLcROPQZL6hw=
