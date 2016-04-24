@@ -7,4 +7,6 @@
 
 # Eclipse project files #
 /.settings
+/.classpath
 /.project
+/target/
