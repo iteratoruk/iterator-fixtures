@@ -2,19 +2,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>iterator-fixtures</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
-	
+
 	<parent>
 		<groupId>uk.co.iterator</groupId>
 		<artifactId>iterator-library</artifactId>
-		<version>1.2.0</version>
+		<version>1.3.0</version>
 	</parent>
 
 	<name>Iterator Fixtures</name>
 	<url>${scm.https.home}</url>
 	<scm>
 		<url>${scm.https.home}</url>
-		<connection>scm:git:${scm.uri}</connection>
-		<developerConnection>scm:git:${scm.uri}</developerConnection>
+		<connection>${scm.uri}</connection>
+		<developerConnection>${scm.uri}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<description>Testing utility for generating random fixture data</description>
