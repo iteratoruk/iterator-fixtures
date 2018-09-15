@@ -1,11 +1,11 @@
 /**
- * Copyright (C) 2016 Iterator Ltd. (iteratoruk@gmail.com)
+ * Copyright © 2016 Iterator Ltd. (iteratoruk@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *         http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package iterator.test.fixtures;
 
 import java.math.BigDecimal;
@@ -35,7 +34,7 @@ public final class Fixtures {
     private static final int[] UPPER_ALPHA_RANGE = { 65, 90 };
 
     public static BigDecimal randomBigDecimal(final double min, final double max, final int precision, final int scale, final RoundingMode mode) {
-        return new BigDecimal("" + randomDouble(min, max), new MathContext(precision, mode)).setScale(scale);
+        return new BigDecimal("" + randomDouble(min, max), new MathContext(precision, mode)).setScale(scale, mode);
     }
 
     public static BigDecimal randomBigDecimal(final int precision, final int scale, final RoundingMode mode) {
@@ -110,8 +109,8 @@ public final class Fixtures {
         return new String(randomBytes(length), StandardCharsets.UTF_8);
     }
 
-    private static Integer randomAlphanumericCharacterIndex() {
-        Integer[] options = { Integer.valueOf(randomInt(LOWER_ALPHA_RANGE[0], LOWER_ALPHA_RANGE[1])), Integer.valueOf(randomInt(UPPER_ALPHA_RANGE[0], UPPER_ALPHA_RANGE[1])), Integer.valueOf(randomInt(NUMERIC_RANGE[0], NUMERIC_RANGE[1])) };
+    private static int randomAlphanumericCharacterIndex() {
+        int[] options = {randomInt(LOWER_ALPHA_RANGE[0], LOWER_ALPHA_RANGE[1]), randomInt(UPPER_ALPHA_RANGE[0], UPPER_ALPHA_RANGE[1]), randomInt(NUMERIC_RANGE[0], NUMERIC_RANGE[1])};
         return options[randomInt(0, 2)];
     }
 
