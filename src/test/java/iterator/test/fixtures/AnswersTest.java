@@ -6,6 +6,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.BDDMockito.given;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -53,5 +55,12 @@ class AnswersTest {
         () -> {
           mock.methodWithParams(str, i);
         });
+  }
+
+  @Test
+  void shouldNotBeAbleToInstantiateViaReflection() throws Exception {
+    Constructor<Answers> constructor = Answers.class.getDeclaredConstructor();
+    constructor.setAccessible(true);
+    assertThrows(InvocationTargetException.class, constructor::newInstance);
   }
 }

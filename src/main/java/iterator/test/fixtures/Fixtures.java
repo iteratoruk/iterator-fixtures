@@ -56,7 +56,7 @@ public final class Fixtures {
     for (int i = 0; i < length; i++) {
       // we just use byte values for alphanumeric characters at present as this helps with random
       // string/email/url generation etc
-      bytes[i] = Integer.valueOf(randomAlphanumericCharacterIndex()).byteValue();
+      bytes[i] = (byte) randomAlphanumericCharacterIndex();
     }
     return bytes;
   }
@@ -90,7 +90,7 @@ public final class Fixtures {
   }
 
   public static float randomFloat(float min, float max) {
-    return Double.valueOf(randomDouble(min, max)).floatValue();
+    return (float) randomDouble(min, max);
   }
 
   public static int randomInt() {

@@ -18,7 +18,7 @@ package iterator.test.fixtures;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-public class Answers {
+public final class Answers {
 
   private static class ReturnsParameterIndexAnswer<T> implements Answer<T> {
 
@@ -35,7 +35,11 @@ public class Answers {
     }
   }
 
-  public static Answer<?> withParameter(int i) {
+  public static <T> Answer<T> withParameter(int i) {
     return new ReturnsParameterIndexAnswer<>(i);
+  }
+
+  private Answers() {
+    throw new IllegalStateException();
   }
 }
