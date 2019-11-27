@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>uk.co.iterator</groupId>
 		<artifactId>iterator-library</artifactId>
-		<version>1.7.0</version>
+		<version>1.9.0</version>
 	</parent>
 
 	<name>Iterator Fixtures</name>
@@ -37,7 +37,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
+			<artifactId>mockito-junit-jupiter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
@@ -50,8 +50,13 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

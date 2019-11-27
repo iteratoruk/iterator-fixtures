@@ -20,24 +20,22 @@ import org.mockito.stubbing.Answer;
 
 public class Answers {
 
-    private static class ReturnsParameterIndexAnswer<T> implements Answer<T> {
+  private static class ReturnsParameterIndexAnswer<T> implements Answer<T> {
 
-        private final int i;
+    private final int i;
 
-        ReturnsParameterIndexAnswer(int i) {
-            this.i = i;
-        }
-
-        @Override
-        @SuppressWarnings("unchecked")
-        public T answer(InvocationOnMock invocation) throws Throwable {
-            return (T) invocation.getArguments()[i];
-        }
-
+    ReturnsParameterIndexAnswer(int i) {
+      this.i = i;
     }
 
-    public static Answer<?> withParameter(int i) {
-        return new ReturnsParameterIndexAnswer<>(i);
+    @Override
+    @SuppressWarnings("unchecked")
+    public T answer(InvocationOnMock invocation) throws Throwable {
+      return (T) invocation.getArguments()[i];
     }
+  }
 
+  public static Answer<?> withParameter(int i) {
+    return new ReturnsParameterIndexAnswer<>(i);
+  }
 }
